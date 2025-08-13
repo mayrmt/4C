@@ -1,5 +1,7 @@
 [default.extend-words]
 thr = "thermo"
+cann = "cann" # "constitutive artificial neural network"
+CANN = "CANN" # "Constitutive Artificial Neural Network"
 
 # Special abbreviations we would like to keep as is.
 ele = "ele" # "element"
@@ -17,3 +19,6 @@ Equil = "Equil" # "Equilibration" (used to pre-order a linear system)
 # German words we want to keep as is.
 Interaktion = "Interaktion"
 Elemente = "Elemente"
+
+[default.extend-identifiers]
+CANNSurrogate = "CANNSurrogate"

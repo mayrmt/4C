@@ -127,6 +127,8 @@ std::string_view Core::Materials::to_string(Core::Materials::MaterialType materi
       return "MAT_PlasticElastHyper";
     case m_plelasthyperVCU:
       return "MAT_PlasticElastHyperVCU";
+    case m_cann_surrogate:
+      return "MAT_Can_Surrogate";
     case mes_couplogneohooke:
       return "ELAST_CoupLogNeoHooke";
     case mes_coupSVK:

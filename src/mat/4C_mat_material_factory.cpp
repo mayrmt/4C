@@ -12,6 +12,7 @@
 #include "4C_mat_aaaneohooke.hpp"
 #include "4C_mat_beam3r_plasticity.hpp"
 #include "4C_mat_beam_elasthyper_parameter.hpp"
+#include "4C_mat_cann_surrogate.hpp"
 #include "4C_mat_carreauyasuda.hpp"
 #include "4C_mat_cnst_1d_art.hpp"
 #include "4C_mat_constraintmixture.hpp"
@@ -253,6 +254,17 @@ std::unique_ptr<Core::Mat::PAR::Parameter> Mat::make_parameter(
     case Core::Materials::m_pllinelast:
     {
       return make_parameter_impl<Mat::PAR::PlasticLinElast>(id, type, input_data);
+    }
+    case Core::Materials::m_cann_surrogate:
+    {
+#ifdef FOUR_C_WITH_PYBIND11
+      return make_parameter_impl<Mat::PAR::CANNSurrogate>(id, type, input_data);
+#else
+      FOUR_C_THROW(
+          "You are trying to use a consitutive law based on Consitutive Artificial Neural Networks "
+          "(CANNs) via Python, however with FOUR_C_WITH_PYBIND11 flag turned off. Please enable "
+          "this flag and configure & build 4C again.");
+#endif
     }
     case Core::Materials::m_vp_no_yield_surface:
     {

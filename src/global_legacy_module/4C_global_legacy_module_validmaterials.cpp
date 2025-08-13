@@ -1318,6 +1318,19 @@ std::unordered_map<Core::Materials::MaterialType, Core::IO::InputSpec> Global::v
                         "isotropic and kineamtic hardening"});
   }
 
+  /*--------------------------------------------------------------------*/
+  // Surrogate via Constitutive Artificial Neural Networks (CANNs)
+  {
+    known_materials[Core::Materials::m_cann_surrogate] = group("MAT_Struct_CAN_Surrogate",
+        {
+            parameter<std::filesystem::path>(
+                "PYTHON_FILENAME", {.description = "Absolute or relative path to Python file "
+                                                   "managing the CAN surrogate model"}),
+        },
+        {.description = "Surrogate via Constitutive Artificial Neural Networks (CANNs)"});
+  }
+
+
   /*----------------------------------------------------------------------*/
   // Elastic visco-plastic finite strain material law without yield surface
   {
