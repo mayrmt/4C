@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: System preparation
-        run: ./dependencies/darwin/prepare_system.sh
+        run: ./dependencies/darwin/prepare_system.sh --for-github-workflow
       - name: Get Homebrew versions
         id: brew-versions
         run: |
@@ -72,7 +72,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: System preparation
-        run: ./dependencies/darwin/prepare_system.sh
+        run: ./dependencies/darwin/prepare_system.sh --for-github-workflow
       - name: Get Homebrew versions
         id: brew-versions
         run: |
