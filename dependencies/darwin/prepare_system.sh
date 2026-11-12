@@ -18,7 +18,7 @@ echo "System information:"
 g++ -v
 uname
 sysctl -n hw.physicalcpu
-sudo mkdir -p /usr/local/lib
+
 brew update
 sudo ln -sf $(brew --prefix gcc@14)/bin/gfortran-14 /opt/homebrew/bin/gfortran
 brew install jpeg-turbo python@3.14
